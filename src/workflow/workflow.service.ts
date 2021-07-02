@@ -21,6 +21,7 @@ export class WorkflowService {
     return WorkflowInstancesApi.queryInstances({
       definitionId: definitionId ? definitionId : '',
       $top: 10,
+      $orderby: 'startedAt desc',
     }).execute(this.destination);
   }
 
